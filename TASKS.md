@@ -29,7 +29,7 @@ Not Started / In Progress / Blocked / Completed
 | 5 Email Studio | Completed | 5a (templates.py, placeholders.py) + 5b (attachments.py, campaign_prep.py, email_studio page); 34+23=57 tests pass; no SMTP, no send button |
 | 6 Gmail SMTP+Sending | Completed | 6a (smtp_config, message_builder, smtp_sender) + 6b (history_store, campaign_manager page, overview updated); 29+17=46 tests pass |
 | 7 History/Reports+Assistant | Completed | 7a: reports + history page (20 tests) + 7b: assistant/tools.py, workflow.py, campaign_manager tab (28 tests); 48 total pass |
-| UI Polish | Completed | Login layout fix: single centered card on sage bg (flex viewport-height centering); feature lines compact row; 2/2 login/app render tests pass |
+| Advanced UI | Completed | (6-9) pages/charts use new CHART_COLORS + style_plotly_fig; 254/254 full suite pass |
 
 ## Phase 5b Summary
 
@@ -243,3 +243,17 @@ git commit -m "feat: OutreachIQ v1 complete"
 **Real test result:** 254/254 pass (0 failures after both fixes).
 
 **Known limits:** Google Fonts load from CDN — offline use will fall back to system fonts. CSS selectors are conservative `data-testid` attributes; may need adjustment for future Streamlit versions. The `oi-real-send-block` amber tint requires the page to call `st.markdown(...unsafe_allow_html=True)` with the class manually if the distinction is wanted inside the tab; currently the Streamlit `st.warning()` provides the amber naturally. Login split-panel relies on Streamlit column CSS which can vary between versions.
+
+## Advanced UI Redesign Summary
+
+**Files changed:** `.streamlit/config.toml` (base=light, green palette); `ui/theme.py` (complete rewrite: CSS tokens, Plus Jakarta Sans + Fraunces fonts, force light mode, dark green-950 sidebar with light text, pill/segmented tabs, metric hover lift, login single centered card, amber `.oi-real-warn` class, scrollbar, prefers-reduced-motion, 200ms transitions); `ui/components.py` (CHART_COLORS extended to 6, page_header with section_label/status_chip/divider, metric_card, section_card, empty_state, info_callout, status_chip helpers, Plotly template with donut hole 0.6); `app.py` (login feature HTML to new CSS class names, sidebar dark wordmark + user chip HTML).
+
+**Test result:** 254/254 pass (0 failures). sklearn InconsistentVersionWarning (pre-existing trained model) is not a failure.
+
+**Limits / Streamlit constraints:**
+- Dark sidebar: Streamlit does not expose a sidebar-specific color scheme API; the dark look is achieved via CSS `!important` overrides on `data-testid="stSidebar"`. It works in Streamlit 1.65 but may need selector updates for future versions.
+- Left-panel split login: Streamlit columns cannot be made truly full-viewport with fixed positioning without injecting complex CSS that breaks other pages. Chosen stable alternative: single centered card on green-tinted background.
+- Pill tabs: Streamlit renders tabs as `role="tablist"` buttons; the pill style is achieved via CSS. The active tab uses `aria-selected="true"` which is stable.
+- Sidebar nav icons: `st.navigation` + `st.Page` does not expose a per-item SVG icon API in 1.65; items show title text only. Icons would require a custom sidebar nav reimplementation that breaks session_state routing, which is out of scope.
+- Bar rounded corners: Plotly's bar chart does not have a native `border-radius` property in 7.x; the clean look is achieved via opacity and template styling.
+- Donut total label: centering a total value inside the donut hole requires `add_annotation` per chart; not applied globally to avoid changing data per chart.

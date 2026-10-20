@@ -83,10 +83,13 @@ def _show_login() -> None:
 
 def _login_features() -> None:
     st.markdown(
-        '<div class="oi-features">'
-        '<div class="oi-feat">Clean your contact data</div>'
-        '<div class="oi-feat">Explainable ML classification</div>'
-        '<div class="oi-feat">Personalized email with control</div>'
+        '<div class="oi-feats">'
+        '<div class="oi-feat">'
+        '<span class="oi-feat-icon">&#9783;</span>Clean contact data</div>'
+        '<div class="oi-feat">'
+        '<span class="oi-feat-icon">&#9670;</span>Explainable ML</div>'
+        '<div class="oi-feat">'
+        '<span class="oi-feat-icon">&#9993;</span>Controlled email</div>'
         '</div>',
         unsafe_allow_html=True,
     )
@@ -110,9 +113,18 @@ def _show_app() -> None:
     apply_theme()
     pg = st.navigation(_build_nav())
     with st.sidebar:
-        st.markdown("### OutreachIQ")
+        st.markdown(
+            '<h3 style="color:#FFFFFF;font-family:Fraunces,serif;'
+            'letter-spacing:-.01em;padding:0 .25rem .1rem;">OutreachIQ</h3>',
+            unsafe_allow_html=True,
+        )
         st.divider()
-        st.caption(f"Signed in as **{st.session_state.get('username', '')}**")
+        uname = st.session_state.get("username", "")
+        st.markdown(
+            f'<div style="font-size:.8rem;color:#9CCDAE;padding:0 .25rem .5rem;">'
+            f'Signed in as <strong style="color:#DCEEE1;">{uname}</strong></div>',
+            unsafe_allow_html=True,
+        )
     pg.run()
     with st.sidebar:
         st.divider()

@@ -60,10 +60,9 @@ Phase 7b: Controlled Outreach Assistant
 **Decisions:** Unknown/Needs Review counts toward sent_keys (safer); no body text in records; HistoryStore is a Protocol for future SQLite swap.
 **Manual test steps:** see full TASKS.md Phase 6b Summary section.
 
-## UI Polish (post v1)
-**Files changed:** ui/theme.py (premium CSS: variables, fonts, cards, sidebar, buttons, inputs, tabs, dataframes, alerts, progress, responsive login, fade-in), ui/components.py (extended chart colors, page_header divider, style_plotly_fig fixed), .streamlit/config.toml (toolbarMode minimal), app.py (split-layout login, sidebar wordmark+logout).
-**Bugs fixed:** marker_opacity invalid on pie traces (→ trace-level opacity with selector); unescaped {} in f-string CSS block.
-**Test result:** 254/254 pass.
+## Advanced UI Redesign (post v1)
+Files changed: .streamlit/config.toml, ui/theme.py (dark sidebar, pill tabs, login card, force light, tokens), ui/components.py (new helpers, Plotly template), app.py (login features, dark sidebar markup).
+Test result: 254/254 pass. Limits: sidebar icons not supported by st.navigation in 1.65; split login unstable → single card; bar rounded corners not in Plotly 7.x.
 - Full read-only view of all campaigns from FileHistoryStore (list + drill-down).
 - Per-campaign detail: recipient table with statuses, subject snippet, mode, timestamps.
 - Summary stats across campaigns. Export detail CSV/XLSX.
