@@ -66,6 +66,7 @@ The application uses Python, rule-based logic, and selected machine learning tec
 6. **Track campaign activity** — Review recipient statuses, inspect campaign history, add review notes, and export reports.
 
 The aim is to reduce repetitive preparation work and make outreach easier to review and manage. OutreachIQ does not automate job applications independently, guarantee email delivery, or predict whether a recruiter will respond.
+
 ---
 
 ## Features
