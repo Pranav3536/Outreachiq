@@ -1,0 +1,46 @@
+# === Secrets / environment ===
+.env
+.env.*
+!.env.example
+
+# === Python virtualenv & cache ===
+.venv
+venv
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# === Data contents (keep .gitkeep) ===
+data/uploads/*
+!data/uploads/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/labelled/*
+!data/labelled/.gitkeep
+
+# === Runtime contents (keep .gitkeep) ===
+runtime/campaigns/*
+!runtime/campaigns/.gitkeep
+runtime/resume/*
+!runtime/resume/.gitkeep
+runtime/models/*
+!runtime/models/.gitkeep
+runtime/logs/*
+!runtime/logs/.gitkeep
+runtime/auth/*
+!runtime/auth/.gitkeep
+
+# === Sensitive file types (except under sample_data/) ===
+*.pdf
+*.csv
+*.xlsx
+*.xls
+!sample_data/**/*.pdf
+!sample_data/**/*.csv
+!sample_data/**/*.xlsx
+!sample_data/**/*.xls
+
+# === Model / artifact / log files ===
+*.joblib
+*.pkl
+*.log

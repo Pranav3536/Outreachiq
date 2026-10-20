@@ -1,0 +1,21 @@
+Full Name,E-mail,Designation,Organisation,Phone
+alice  johnson,alice.johnson@acme.com,Software Engineer,acme corp,555-0101
+  BOB SMITH  ,bob.smith@beta.io,Data Analyst,  beta llc  ,555-0102
+carol white,carol.white@gamma.co,Product Manager,gamma inc,555-0103
+david lee,david.lee@delta.org,DevOps Engineer,delta systems,555-0104
+emma brown,NOT_AN_EMAIL,UX Designer,epsilon labs,555-0105
+frank garcia,frank.garcia@zeta.ai,ML Engineer,zeta tech,555-0106
+,grace.kim@eta.dev,Backend Engineer,eta solutions,555-0107
+henry miller,henry.miller@theta.com,,theta group,555-0108
+ivy nguyen,ivy.nguyen@iota.io,Frontend Developer,,555-0109
+jack o'connor,jack.oconnor@kappa.org,Engineering Manager,kappa works,555-0110
+lily patel,missing-at-sign.net,QA Engineer,lambda quality,555-0111
+mike ross,mike.ross@mu.co,Site Reliability Engineer,mu ops,555-0112
+alice  johnson,alice.johnson@acme.com,Software Engineer,acme corp,555-0101
+bob.smith@beta.io,bob.smith@beta.io,Data Analyst,beta llc,555-0102
+nina sharma,nina@plaintext,Security Engineer,nu secure,555-0113
+oscar turner,,Technical Lead,xi systems,555-0114
+paula chen,paula.chen@omega.com,Product Designer,omega design,555-0115
+raj mehta,raj@mehta@invalid.com,Data Engineer,pi analytics,555-0116
+sophie wong,sophie.wong@rho.co,Engineering Manager,rho corp,555-0117
+tom baker,tom.baker@sigma.io,DevOps Engineer,sigma ops,555-0118

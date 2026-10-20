@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+openpyxl
+scikit-learn
+plotly
+python-dotenv
+bcrypt
+email-validator
+pytest
+joblib
