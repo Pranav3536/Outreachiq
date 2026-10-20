@@ -41,7 +41,7 @@ outreach-iq/
 ├── requirements.txt
 ├── pytest.ini
 ├── .env.example                # Copy to .env and fill in
-├── .streamlit/config.toml      # Theme (white + light sage)
+├── .streamlit/config.toml      # Theme (light, green)
 ├── scripts/
 │   ├── create_user.py          # Create a local login user
 │   └── smtp_check.py           # Test SMTP connection (no email sent)
