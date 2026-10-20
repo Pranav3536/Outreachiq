@@ -34,12 +34,12 @@ The application runs locally and stores its data in files. It does not require p
 
 ---
 
-**Why I Built This
+**Why I Built This**
 Finding relevant people to contact for internships and job opportunities involves more than just writing an email. Contact lists often have inconsistent column names, missing details, duplicate records, and job titles that are difficult to categorize. Writing personalized emails and keeping track of outreach activity can also become repetitive when everything is managed separately.
 
 I built OutreachIQ to bring these tasks into one place instead of switching between spreadsheets, email drafts, and campaign records.
 
-**The Problem
+**The Problem**
 
 Messy contact data: Contact lists from different sources may have different column names, missing information, invalid email formats, or duplicate entries.
 Finding relevant contacts: Job titles vary across companies, making it harder to identify HR professionals, recruiters, founders, and other relevant contacts.
@@ -47,13 +47,13 @@ Repetitive email writing: Sending similar application emails to multiple people 
 Limited campaign tracking: Without organized records, it can be difficult to review which messages were simulated, accepted by the SMTP server, failed, or need further attention.
 Manual preparation: Reviewing contacts, personalizing messages, attaching a resume, and checking recipients takes time when these tasks are handled separately.
 
-**The Solution
+**The Solution**
 
 OutreachIQ combines these steps in a single Streamlit application. It allows me to import contact data, clean and categorize records, analyze job titles using basic ML/NLP techniques, prepare personalized emails, and review campaign activity.
 Before sending a real campaign, recipients and email content can be reviewed, and sending requires explicit confirmation. Test mode is available to check the workflow without sending real emails.
 The application uses Python, rule-based logic, and selected machine learning techniques. It runs locally, uses file-based storage, and does not depend on paid APIs or an LLM.
 
-**How It Works
+**How It Works**
 
 Import and clean contacts — Upload a CSV or Excel file, map columns, validate email formats, identify duplicates, and review data quality.
 Explore job titles — Categorize contacts using rules and filter them by designation, company, or category.
